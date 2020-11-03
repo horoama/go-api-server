@@ -7,6 +7,7 @@ import (
 
 func Echo() echo.HandlerFunc {
     return func(c echo.Context) error {
-        return c.String(http.StatusOK, c.Param("msg"))
+        result := c.Param("msg")
+        return c.String(http.StatusOK, result)
     }
 }
